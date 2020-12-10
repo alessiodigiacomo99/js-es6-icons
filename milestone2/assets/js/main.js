@@ -1,5 +1,5 @@
-  $(document).ready(function () {
-    // Creiamo array di oggetti per le icone con le seguenti proprieta: name, prefix, type, family 
+$(document).ready(function () {
+    // Qui le icone che abbiamo definito nella milestone 1
     let icone = [
         {
             name: "cat",
@@ -64,20 +64,33 @@
             // <i class="fas fa-fish"></i>
         }
     ]
-  
-    // Selezioniamo il container icons
+
+    // definiamo dei colori per le icone (blue, orange, purple)
+    const color = ["blue", "orange", "purple"]
+    //aggiungiamo dei colori usando una funzione
+    icone.forEach(element => {
+        element.color = color[Math.floor(Math.random()*3)]
+    });
+    console.log(icone);
+    //inseriamo le icone colorate nel container
     const icons = $(".icons");
-    //inseriamo le icone nel container (possiamo creare una funzione tipo print() per inserire gli elementi e richiamarla qui)
     icone.forEach(element => {
         let icona = `<div>
-        <i class = "${element.prefix} ${element.type}-${element.family}"></i>
+        <i class = "${element.prefix} ${element.type}-${element.family}" style ="color:${element.color}"</i>
         </div>`;
         icons.append(icona)
     });
+  
   });
   
   
   /* ---- FUNCTIONS ----*/
-  // Creiamo una funzione per iterare nell'array e che appenda al container le icone.
-  // tip: possiamo usare un ciclo foreach qui e destrutturare gli le proprieta degli elementi di un array
-  // tip: il template literal ci puo aiutare con il markup
+  //1. Funzione milestone 1
+  
+  
+  //2. funzione per assegnare un colore ad un icona
+  // tip: possiamo invocare qui dentro un'altra funzione (2) oppure usare map 
+  
+  
+  //3. funzione per ottenere da un array
+  // tip: possiamo usarla nella funzione precedente oppure usare map senza creare questa funzione.
